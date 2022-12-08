@@ -1,0 +1,52 @@
+TYPES
+
+bot
+    cat
+    sem
+    agr
+    list
+
+a ---> (det)
+one ---> (num)
+two ---> (num)
+three ---> (num)
+mouse --> (n_sem
+mice ---> (n, n_plurality:plural)
+sheep ---> (n)
+linguist ---> (n, n_plurality:singular)
+linguists ---> (n, n_plurality:plural)
+see ---> (v)
+sees ---> (v)
+chase ---> (v)
+chases ---> (v)
+chased ---> (v)
+
+yi ---> (num)
+liang ---> (num)
+san ---> (num)
+laoshu ---> (n)
+yang ---> (n)
+yuyanxuejia ---> (n)
+kanjian ---> (v)
+zhui ---> (v)
+ge ---> (cl)
+wei ---> (cl)
+zhi ---> (cl)
+tou ---> (cl)
+
+
+rec([sheep, chase, mice])
+rec([sheep, chase, mouse])
+
+mouse, mice, sheep, linguist, linguists, see, sees, saw, chase, chases, chased, one, two, three
+
+The mouse saw the linguist.
+The mice chased the sheep.
+The linguists saw the mice.
+One sheep chased two mice.
+The mouse chased the sheep, but the sheep saw it coming and ran away.
+The linguist saw the three mice chasing each other.
+The mice saw the linguist and chased her.
+The linguist chased the mouse, but it was too quick and got away.
+Two mice saw a sheep and chased it.
+The linguists saw the mice chasing each other and laughed.

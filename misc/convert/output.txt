@@ -1,0 +1,34 @@
+rec(['two', 'linguists', 'see', 'a', 'mouse']).
+rec(['three', 'linguists', 'see', 'two', 'mice']).
+
+rec(['a', 'linguist', 'sees', 'a', 'mouse']).
+rec(['a', 'linguist', 'sees', 'three', 'mice']).
+
+rec(['a', 'linguist', 'saw', 'a', 'mouse']).
+rec(['a', 'linguist', 'saw', 'two', 'mice']).
+rec(['two', 'linguists', 'saw', 'a', 'mouse']).
+rec(['three', 'linguists', 'saw', 'three', 'mice']).
+
+rec(['two', 'sheep', 'chase', 'a', 'linguist']).
+rec(['three', 'sheep', 'chase', 'two', 'linguists']).
+
+rec(['a', 'sheep', 'chases', 'a', 'linguist']).
+rec(['a', 'sheep', 'chases', 'three', 'linguists']).
+
+rec(['a', 'sheep', 'chased', 'a', 'linguist']).
+rec(['a', 'sheep', 'chased', 'two', 'linguists']).
+rec(['two', 'sheep', 'chased', 'a', 'linguist']).
+rec(['three', 'sheep', 'chased', 'three', 'linguists']).
+
+rec(['sheep', 'chase', 'linguists']).
+rec(['linguists', 'chase', 'sheep']).
+rec(['linguists', 'see', 'sheep']).
+rec(['sheep', 'see', 'mice']).
+
+rec(['yi', 'ge', 'yuyanxuejia', 'kanjian', 'san', 'zhi', 'laoshu']).
+rec(['liang', 'ge', 'yuyanxuejia', 'kanjian', 'yi', 'zhi', 'laoshu']).
+rec(['san', 'wei', 'yuyanxuejia', 'kanjian', 'liang', 'zhi', 'laoshu']).
+
+rec(['yi', 'tou', 'yang', 'zhui', 'yi', 'wei', 'yuyanxuejia']).
+rec(['san', 'zhi', 'yang', 'zhui', 'yi', 'wei', 'yuyanxuejia']).
+rec(['liang', 'tou', 'yang', 'zhui', 'san', 'ge', 'yuyanxuejia']).

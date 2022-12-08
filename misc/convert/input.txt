@@ -1,0 +1,34 @@
+two linguists see a mouse
+three linguists see two mice
+
+a linguist sees a mouse
+a linguist sees three mice
+
+a linguist saw a mouse
+a linguist saw two mice
+two linguists saw a mouse
+three linguists saw three mice
+
+two sheep chase a linguist
+three sheep chase two linguists
+
+a sheep chases a linguist
+a sheep chases three linguists
+
+a sheep chased a linguist
+a sheep chased two linguists
+two sheep chased a linguist
+three sheep chased three linguists
+
+sheep chase linguists
+linguists chase sheep
+linguists see sheep
+sheep see mice
+
+yi ge yuyanxuejia kanjian san zhi laoshu
+liang ge yuyanxuejia kanjian yi zhi laoshu
+san wei yuyanxuejia kanjian liang zhi laoshu
+
+yi tou yang zhui yi wei yuyanxuejia
+san zhi yang zhui yi wei yuyanxuejia
+liang tou yang zhui san ge yuyanxuejia
