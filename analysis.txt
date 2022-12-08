@@ -15,6 +15,15 @@
 % Copyright c 2022 University of Toronto
 
 2(a)
+(28)
+exists x (hacker(x) ^ forall y (language(y) => speaks(x, y)))
+forall y (language(y) => exists x (hacker(x) ^ speaks(x, y)))
 
+(29)
+exists y (yuyan(y) ^ forall x (heike(x) => huishuo(x, y)))
+forall x (heike(x) => exists y (yuyan(y) ^ huishuo(x, y)))
+
+(30)
+exists x (heike(x) ^ forall y (yuyan(y) => huishuo(x, y)))
 
 2(e)
