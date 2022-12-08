@@ -113,17 +113,15 @@ chased ---> (v, sem:chase, subcat:[(Obj, np), (Subj, np)]).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Define your Rules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-np rule (np, agr:Agr, sem:Sem)
-===>
-cat> (det;num, agr:Agr, sem:Nom_sem),
-cat> (n, agr:Agr, sem:N_sem).
+% Do these need semantics?
+np rule (np, agr:Agr, sem:N_sem, sem:count:Count) ===>
+    cat> (det;num, agr:Agr, sem:count:Count),
+    cat> (n, agr:Agr, sem:N_sem).
 
-vp rule (vp, agr:Agr, sem:Sem, subcat:(Rest, [_|_]))
-===>
-cat> (verbal, agr:Agr, sem:Sem, subcat:[Obj|Rest]),
-cat> Obj.
+vp rule (vp, agr:Agr, sem:V_sem, sem:obj:Obj_sem, subcat:(Rest, [_|_])) ===>
+    cat> (verbal, agr:Agr, sem:V_sem, subcat:[Obj|Rest]),
+    cat> (Obj, sem:Obj_sem).
 
-s rule (s, agr:Agr, sem:Sem, subcat:([], Rest))
-===>
-cat> (Subj, np, agr:Agr, sem:N_sem),
-cat> (vp, agr:Agr, sem:V_sem, subcat:[Subj|Rest]).
+s rule (s, agr:Agr, sem:V_sem, sem:subj:Subj_sem, sem:obj:Obj_sem, subcat:([], Rest)) ===>
+    cat> (Subj, np, agr:Agr, sem:Subj_sem),
+    cat> (vp, agr:Agr, sem:V_sem, sem:obj:Obj_sem, subcat:[Subj|Rest]).
