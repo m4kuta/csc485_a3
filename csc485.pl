@@ -286,3 +286,39 @@ prec(Ws) :- \+ \+ (
     print_logic(Logic),
     ttynl, flush_output,
     query_proceed).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Testing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+t1 :- rec(['two', 'linguists', 'see', 'a', 'mouse']).
+t2 :- rec(['three', 'linguists', 'see', 'two', 'mice']).
+
+t3 :- rec(['a', 'linguist', 'sees', 'a', 'mouse']).
+t4 :- rec(['a', 'linguist', 'sees', 'three', 'mice']).
+
+t5 :- rec(['a', 'linguist', 'saw', 'a', 'mouse']).
+t6 :- rec(['a', 'linguist', 'saw', 'two', 'mice']).
+t7 :- rec(['two', 'linguists', 'saw', 'a', 'mouse']).
+t8 :- rec(['three', 'linguists', 'saw', 'three', 'mice']).
+
+t9 :- rec(['two', 'sheep', 'chase', 'a', 'linguist']).
+t10 :- rec(['three', 'sheep', 'chase', 'two', 'linguists']).
+
+t11 :- rec(['a', 'sheep', 'chases', 'a', 'linguist']).
+t12 :- rec(['a', 'sheep', 'chases', 'three', 'linguists']).
+
+t13 :- rec(['a', 'sheep', 'chased', 'a', 'linguist']).
+t14 :- rec(['a', 'sheep', 'chased', 'two', 'linguists']).
+t15 :- rec(['two', 'sheep', 'chased', 'a', 'linguist']).
+t16 :- rec(['three', 'sheep', 'chased', 'three', 'linguists']).
+
+rec_tests :- t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Helper functions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% recompile the grammar
+rc :- compile_gram(q1_en).
+
+% shorter quit
+q :- halt.
