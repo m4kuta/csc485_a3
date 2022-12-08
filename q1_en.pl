@@ -66,42 +66,49 @@ linguist ---> (n, agr:number:singular, sem:linguist).
 linguists ---> (n, agr:number:plural, sem:linguist).
 
 % Two/Three linguists see a mouse.
-see ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
+% see ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
 % Two/Three linguists see two/three mice.
-see ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
+% see ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
+see ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:(singular;plural)), (Subj, np, agr:number:plural)]).
 
 % A lingsuit sees a mouse.
-sees ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
+% sees ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
 % A linguist sees two/three mice.
-sees ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
+% sees ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
+sees ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:(singular;plural)), (Subj, np, agr:number:singular)]).
 
 % A linguist saw a mouse.
-saw ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
+% saw ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
 % A linguist saw two/three mice.
-saw ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
+% saw ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
 % Two/Three linguists saw a mouse.
-saw ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
+% saw ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
 % Two/Three linguists saw two/three mice.
-saw ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
+% saw ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
+saw ---> (v, sem:see, subcat:[(Obj, np), (Subj, np)]).
+
 
 % Two/Three linguists chase a mouse.
-chase ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
+% chase ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
 % Two/Three linguists chase two/three mouse.
-chase ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
+% chase ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
+chase ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:(singular;plural)), (Subj, np, agr:number:plural)]).
 
 % A linguist chases a mouse.
-chases ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
+% chases ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
 % A linguist chases two/three mice.
-chases ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
+% chases ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
+chases ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:(singular;plural)), (Subj, np, agr:number:singular)]).
 
 % A linguist chased a mouse.
-chased ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
+% chased ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
 % A linguist chased two/three mice.
-chased ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
+% chased ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
 % Two/Three linguists chased a mouse.
-chased ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
+% chased ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
 % Two/Three linguists chased two/three mice.
-chased ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
+% chased ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
+chased ---> (v, sem:chase, subcat:[(Obj, np), (Subj, np)]).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Define your Rules
