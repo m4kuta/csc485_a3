@@ -99,31 +99,16 @@ chased ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:sin
 % A linguist chased two/three mice.
 chased ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
 % Two/Three linguists chased a mouse.
-chased ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
+chased ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
 % Two/Three linguists chased two/three mice.
-chased ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
+chased ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Define your Rules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% np_det rule (np, agr:Agr, sem:n_sem:N_sem) 
-% ===>
-% cat> (det, agr:Agr, sem:n_sem:N_sem),
-% cat> (n, agr:Agr, sem:n_sem:N_sem).
-
-% np_num rule (np, agr:Agr, sem:n_sem:N_sem)
-% ===>
-% cat> (num, agr:Agr, sem:n_sem:N_sem),
-% cat> (n, agr:Agr, sem:n_sem:N_sem).
-
-% np_np rule (np, agr:Agr, sem:n_sem:N_sem)
-% ===>
-% cat> (n, agr:Agr, sem:n_sem:N_sem),
-% cat> (np, agr:Agr, sem:N_sem).
-
 np rule (np, agr:Agr, sem:Sem)
 ===>
-cat> (nominal, agr:Agr, sem:Nom_sem),
+cat> (det;num, agr:Agr, sem:Nom_sem),
 cat> (n, agr:Agr, sem:N_sem).
 
 vp rule (vp, agr:Agr, sem:Sem, subcat:(Rest, [_|_]))
