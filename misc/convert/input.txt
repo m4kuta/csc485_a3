@@ -32,3 +32,6 @@ san wei yuyanxuejia kanjian liang zhi laoshu
 yi tou yang zhui yi wei yuyanxuejia
 san zhi yang zhui yi wei yuyanxuejia
 liang tou yang zhui san ge yuyanxuejia
+
+two mice chase one sheep
+yi ge yuyanxuejia zhui liang tou yang

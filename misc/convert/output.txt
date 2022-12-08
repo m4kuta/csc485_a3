@@ -32,3 +32,6 @@ rec(['san', 'wei', 'yuyanxuejia', 'kanjian', 'liang', 'zhi', 'laoshu']).
 rec(['yi', 'tou', 'yang', 'zhui', 'yi', 'wei', 'yuyanxuejia']).
 rec(['san', 'zhi', 'yang', 'zhui', 'yi', 'wei', 'yuyanxuejia']).
 rec(['liang', 'tou', 'yang', 'zhui', 'san', 'ge', 'yuyanxuejia']).
+
+rec(['two', 'mice', 'chase', 'one', 'sheep']).
+rec(['yi', 'ge', 'yuyanxuejia', 'zhui', 'liang', 'tou', 'yang']).
