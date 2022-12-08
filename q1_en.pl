@@ -50,10 +50,10 @@ sem1(sem:S, S) if true.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Define your Lexical entries
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-a ---> (det, agr:number:singular).
-one ---> (num, agr:number:singular).
-two ---> (num, agr:number:plural).
-three ---> (num, agr:number:plural).
+a ---> (det, agr:number:singular, sem:count:one).
+one ---> (num, agr:number:singular, sem:count:one).
+two ---> (num, agr:number:plural, sem:count:two).
+three ---> (num, agr:number:plural, sem:count:three).
 
 % Mirror entries for np?
 mouse ---> (n, agr:number:singular, sem:mouse).
