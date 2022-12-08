@@ -322,7 +322,7 @@ t14 :- rec(['a', 'sheep', 'chased', 'two', 'linguists']).
 t15 :- rec(['two', 'sheep', 'chased', 'a', 'linguist']).
 t16 :- rec(['three', 'sheep', 'chased', 'three', 'linguists']).
 
-en_tran1 :- translate(['three', 'sheep', 'chased', 'three', 'linguists']).
+en_tran1 :- translate([two, mice, chase, one, sheep]).
 
 en_tests :- 
     t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16,
@@ -335,5 +335,7 @@ zh_rec3 :- rec(['san', 'wei', 'yuyanxuejia', 'kanjian', 'liang', 'zhi', 'laoshu'
 zh_rec4 :- rec(['yi', 'tou', 'yang', 'zhui', 'yi', 'wei', 'yuyanxuejia']).
 zh_rec5 :- rec(['san', 'zhi', 'yang', 'zhui', 'yi', 'wei', 'yuyanxuejia']).
 zh_rec6 :- rec(['liang', 'tou', 'yang', 'zhui', 'san', 'ge', 'yuyanxuejia']).
+
+zh_trans1 :- translate([yi, ge, yuyanxuejia, zhui, liang, tou, yang]).
 
 zh_tests:- zh_rec1, zh_rec2, zh_rec3, zh_rec4, zh_rec5, zh_rec6.
