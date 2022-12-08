@@ -31,7 +31,9 @@ bot sub [cat, sem, agr, cl_types, list].
         verbal sub [v, vp, s] intro [sem:v_sem, subcat:list].
 
     % Define your agreement
-    agr intro [].
+    agr intro [number:number, class:cl_types].
+    
+    number sub [singular, plural].
 
     count sub [one, two, three].
 
@@ -43,5 +45,35 @@ semantics sem1.
 sem1(sem:S, S) if true.
 
 % Define your Lexical items
+yi ---> (num, agr:number:singular, sem:count:one).
+liang ---> (num, agr:number:plural, sem:count:two).
+san ---> (num, agr:number:plural, sem:count:three).
+
+ge ---> (cl, agr:class:ge).
+wei ---> (cl, agr:class:wei).
+zhi ---> (cl, agr:class:zhi).
+tou ---> (cl, agr:class:tou).
+
+laoshu ---> (n, agr:class:zhi, sem:mouse).
+yang ---> (n, agr:class:(zhi;tou), sem:sheep).
+yuyanxuejia ---> (n, agr:class:(ge;wei), sem:linguist).
+
+kanjian ---> (v, sem:see, subcat:[(Obj, np), (Subj, np)]).
+zhui ---> (v, sem:chase, subcat:[(Obj, np), (Subj, np)]).
 
 % Define your Rules
+clp rule (clp, agr:class:Cl, sem:count:Count) ===>
+    cat> (num, sem:count:Count),
+    cat> (cl, agr:class:Cl).
+
+np rule (np, agr:class:Cl, sem:N_sem, sem:count:Count) ===>
+    cat> (clp, agr:class:Cl, sem:count:Count),
+    cat> (n, agr:class:Cl, sem:N_sem).
+
+vp rule (vp, sem:V_sem, sem:obj:Obj_sem, subcat:(Rest, [_|_])) ===>
+    cat> (v, sem:V_sem, subcat:[Obj|Rest]),
+    cat> (Obj, sem:Obj_sem).
+
+s rule (s, sem:V_sem, sem:subj:Subj_sem, sem:obj:Obj_sem, subcat:([], Rest)) ===>
+    cat> (Subj, np, sem:Subj_sem),
+    cat> (vp, sem:V_sem, sem:obj:Obj_sem).
