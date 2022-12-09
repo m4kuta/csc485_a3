@@ -55,15 +55,14 @@ one ---> (num, agr:number:singular, sem:count:one).
 two ---> (num, agr:number:plural, sem:count:two).
 three ---> (num, agr:number:plural, sem:count:three).
 
-% Mirror entries for np?
 mouse ---> (n, agr:number:singular, sem:mouse, sem:count:one).
-mice ---> (n, agr:number:plural, sem:mouse).
+mice ---> (n, agr:number:plural, sem:mouse, sem:count:(two;three)).
 
 sheep ---> (n, agr:number:singular, sem:sheep, sem:count:one).
-sheep ---> (n, agr:number:plural, sem:sheep).
+sheep ---> (n, agr:number:plural, sem:sheep, sem:count:(two;three)).
 
 linguist ---> (n, agr:number:singular, sem:linguist, sem:count:one).
-linguists ---> (n, agr:number:plural, sem:linguist).
+linguists ---> (n, agr:number:plural, sem:linguist, sem:count:(two;three)).
 
 % Two/Three linguists see a/one mouse.
 % Two/Three linguists see two/three mice.
@@ -96,7 +95,6 @@ chased ---> (v, sem:chase, subcat:[(Obj, np), (Subj, np)]).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Define your Rules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Do these need semantics?
 np rule (np, agr:number:Num, sem:N_sem, sem:count:Count) ===>
     cat> (det;num, agr:number:Num, sem:count:Count),
     sem_head> (n, agr:number:Num, sem:N_sem, sem:count:Count).
