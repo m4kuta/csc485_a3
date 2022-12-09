@@ -1,1 +1,3 @@
 !newdata"INITIAL CATEGORY"(S1(0"s")(V2"agr"(S4(3"mgsat(agr)")))(V5"sem"(S7(6"chase")(V8"obj"(S10(9"sheep")(V11"count"(S13(12"one")))))(V14"subj"(S16(15"mouse")(V17"count"(S19(18"two")))))))(V20"subcat"(S22(21"list"))))
+!newdata"liang zhi laoshu zhui yi zhi yang"(S1(0"s")(V2"agr"(S4(3"agr")(V5"class"(S7(6"zhi")))(V8"number"(S10(9"plural")))))(V11"sem"(S13(12"chase")(V14"obj"(S16(15"sheep")(V17"count"(S19(18"one")))))(V20"subj"(S22(21"mouse")(V23"count"(S25(24"two")))))))(V26"subcat"(L27)))
+!newdata"liang zhi laoshu zhui yi tou yang"(S1(0"s")(V2"agr"(S4(3"agr")(V5"class"(S7(6"zhi")))(V8"number"(S10(9"plural")))))(V11"sem"(S13(12"chase")(V14"obj"(S16(15"sheep")(V17"count"(S19(18"one")))))(V20"subj"(S22(21"mouse")(V23"count"(S25(24"two")))))))(V26"subcat"(L27)))
