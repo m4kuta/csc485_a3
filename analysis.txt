@@ -16,14 +16,32 @@
 
 2(a)
 (28)
-exists x (hacker(x) ^ forall y (language(y) => speaks(x, y)))
-forall y (language(y) => exists x (hacker(x) ^ speaks(x, y)))
+exists x. (hacker(x) ^ forall y. (language(y) => speaks(x, y)))
+forall y. (language(y) => exists x. (hacker(x) ^ speaks(x, y)))
 
 (29)
-exists y (yuyan(y) ^ forall x (heike(x) => huishuo(x, y)))
-forall x (heike(x) => exists y (yuyan(y) ^ huishuo(x, y)))
+exists y. (yuyan(y) ^ forall x. (heike(x) => huishuo(x, y)))
+forall x. (heike(x) => exists y. (yuyan(y) ^ huishuo(x, y)))
 
 (30)
-exists x (heike(x) ^ forall y (yuyan(y) => huishuo(x, y)))
+exists x. (heike(x) ^ forall y. (yuyan(y) => huishuo(x, y)))
 
 2(e)
+(28) Original
+a hacker speaks every language
+(28) Google Translate
+heiku huishuo mei yi zhong yuyan
+
+(30) Original
+yi ge heike huishuo mei zhong yuyan
+(30） Google Translate
+a hacker can speak every language
+
+Our system and Google Translate both capture the correct meaning of sentences 
+(28) and (30) in the translation. However, Google Translate utilizes additional
+words that are not in our system's lexicon, such as “mei yi” instead of 
+“mei zhong” to express “every” in (28)'s translation and  "can" instead of 
+"speaks" to express "huishuo" in (30)'s translation.
+
+
+

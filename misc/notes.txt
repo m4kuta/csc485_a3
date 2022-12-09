@@ -50,3 +50,20 @@ The mice saw the linguist and chased her.
 The linguist chased the mouse, but it was too quick and got away.
 Two mice saw a sheep and chased it.
 The linguists saw the mice chasing each other and laughed.
+
+uq, np, dou, vp
+np, v, uq, np
+
+uq np > eq np ==> ambiguous scope
+eq np > uq up ==> unambiguous scope
+
+lambda function
+    lam var . f(var)
+    a function that var and applies f on it
+
+beta reduction
+    keep reducing child LF's into parent LF's
+
+quantifier storage
+    QSTORE
+    keep LF's in QSTORE for later use
