@@ -56,72 +56,55 @@ two ---> (num, agr:number:plural, sem:count:two).
 three ---> (num, agr:number:plural, sem:count:three).
 
 % Mirror entries for np?
-mouse ---> (n, agr:number:singular, sem:mouse).
+mouse ---> (n, agr:number:singular, sem:mouse, sem:count:one).
 mice ---> (n, agr:number:plural, sem:mouse).
 
-sheep ---> (n, agr:number:singular, sem:sheep).
+sheep ---> (n, agr:number:singular, sem:sheep, sem:count:one).
 sheep ---> (n, agr:number:plural, sem:sheep).
 
-linguist ---> (n, agr:number:singular, sem:linguist).
+linguist ---> (n, agr:number:singular, sem:linguist, sem:count:one).
 linguists ---> (n, agr:number:plural, sem:linguist).
 
-% Two/Three linguists see a mouse.
-% see ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
+% Two/Three linguists see a/one mouse.
 % Two/Three linguists see two/three mice.
-% see ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
 see ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:(singular;plural)), (Subj, np, agr:number:plural)]).
 
-% A lingsuit sees a mouse.
-% sees ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
-% A linguist sees two/three mice.
-% sees ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
+% A/One lingsuit sees a/one mouse.
+% A/One linguist sees two/three mice.
 sees ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:(singular;plural)), (Subj, np, agr:number:singular)]).
 
-% A linguist saw a mouse.
-% saw ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
-% A linguist saw two/three mice.
-% saw ---> (v, agr:number:singular, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
-% Two/Three linguists saw a mouse.
-% saw ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
+% A/One linguist saw a/one mouse.
+% A/One linguist saw two/three mice.
+% Two/Three linguists saw a/one mouse.
 % Two/Three linguists saw two/three mice.
-% saw ---> (v, agr:number:plural, sem:see, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
 saw ---> (v, sem:see, subcat:[(Obj, np), (Subj, np)]).
 
-
-% Two/Three linguists chase a mouse.
-% chase ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
+% Two/Three linguists chase a/one mouse.
 % Two/Three linguists chase two/three mouse.
-% chase ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
 chase ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:(singular;plural)), (Subj, np, agr:number:plural)]).
 
-% A linguist chases a mouse.
-% chases ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
-% A linguist chases two/three mice.
-% chases ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
+% A/One linguist chases a/one mouse.
+% A/One linguist chases two/three mice.
 chases ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:(singular;plural)), (Subj, np, agr:number:singular)]).
 
-% A linguist chased a mouse.
-% chased ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:singular)]).
-% A linguist chased two/three mice.
-% chased ---> (v, agr:number:singular, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:singular)]).
-% Two/Three linguists chased a mouse.
-% chased ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:singular), (Subj, np, agr:number:plural)]).
+% A/One linguist chased a/one mouse.
+% A/One linguist chased two/three mice.
+% Two/Three linguists chased a/one mouse.
 % Two/Three linguists chased two/three mice.
-% chased ---> (v, agr:number:plural, sem:chase, subcat:[(Obj, np, agr:number:plural), (Subj, np, agr:number:plural)]).
 chased ---> (v, sem:chase, subcat:[(Obj, np), (Subj, np)]).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Define your Rules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Do these need semantics?
-np rule (np, agr:Agr, sem:N_sem, sem:count:Count) ===>
-    cat> (det;num, agr:Agr, sem:count:Count),
-    cat> (n, agr:Agr, sem:N_sem).
+np rule (np, agr:number:Num, sem:N_sem, sem:count:Count) ===>
+    cat> (det;num, agr:number:Num, sem:count:Count),
+    sem_head> (n, agr:number:Num, sem:N_sem, sem:count:Count).
 
-vp rule (vp, agr:Agr, sem:V_sem, sem:obj:Obj_sem, subcat:(Rest, [_|_])) ===>
-    cat> (verbal, agr:Agr, sem:V_sem, subcat:[Obj|Rest]),
+vp rule (vp, agr:number:Num, sem:V_sem, sem:obj:Obj_sem, subcat:(Rest, [_|_])) ===>
+    sem_head> (v, agr:number:Num, sem:V_sem, subcat:[Obj|Rest]),
     cat> (Obj, sem:Obj_sem).
 
-s rule (s, agr:Agr, sem:V_sem, sem:subj:Subj_sem, sem:obj:Obj_sem, subcat:([], Rest)) ===>
-    cat> (Subj, np, agr:Agr, sem:Subj_sem),
-    cat> (vp, agr:Agr, sem:V_sem, sem:obj:Obj_sem, subcat:[Subj|Rest]).
+s rule (s, agr:number:Num, sem:V_sem, sem:subj:Subj_sem, sem:obj:Obj_sem, subcat:([], Rest)) ===>
+    cat> (Subj, np, agr:number:Num, sem:Subj_sem),
+    sem_head> (vp, agr:number:Num, sem:V_sem, sem:obj:Obj_sem, subcat:[Subj|Rest]).

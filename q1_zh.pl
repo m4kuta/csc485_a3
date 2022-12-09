@@ -62,18 +62,18 @@ kanjian ---> (v, sem:see, subcat:[(Obj, np), (Subj, np)]).
 zhui ---> (v, sem:chase, subcat:[(Obj, np), (Subj, np)]).
 
 % Define your Rules
-clp rule (clp, agr:class:Cl, sem:count:Count) ===>
-    cat> (num, sem:count:Count),
+clp rule (clp, agr:number:Num, agr:class:Cl, sem:count:Count) ===>
+    sem_head> (num, agr:number:Num, sem:count:Count),
     cat> (cl, agr:class:Cl).
 
-np rule (np, agr:class:Cl, sem:N_sem, sem:count:Count) ===>
-    cat> (clp, agr:class:Cl, sem:count:Count),
-    cat> (n, agr:class:Cl, sem:N_sem).
+np rule (np, agr:number:Num, agr:class:Cl, sem:N_sem, sem:count:Count) ===>
+    cat> (clp, agr:number:Num, agr:class:Cl, sem:count:Count),
+    sem_head> (n, agr:class:Cl, sem:N_sem).
 
 vp rule (vp, sem:V_sem, sem:obj:Obj_sem, subcat:(Rest, [_|_])) ===>
-    cat> (v, sem:V_sem, subcat:[Obj|Rest]),
+    sem_head> (v, sem:V_sem, subcat:[Obj|Rest]),
     cat> (Obj, sem:Obj_sem).
 
-s rule (s, sem:V_sem, sem:subj:Subj_sem, sem:obj:Obj_sem, subcat:([], Rest)) ===>
-    cat> (Subj, np, sem:Subj_sem),
-    cat> (vp, sem:V_sem, sem:obj:Obj_sem).
+s rule (s, agr:Agr, sem:V_sem, sem:subj:Subj_sem, sem:obj:Obj_sem, subcat:([], Rest)) ===>
+    cat> (Subj, np, agr:Agr, sem:Subj_sem),
+    sem_head> (vp, sem:V_sem, sem:obj:Obj_sem, subcat:[Subj|Rest]).
